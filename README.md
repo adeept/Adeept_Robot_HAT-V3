@@ -6,7 +6,7 @@ The Adeept_Robot_HAT operates based on the Raspberry Pi. It has many interfaces.
 
 [Official Raspberry Pi website]: https://www.raspberrypi.org/downloads/    \
 [Official website]:  https://www.adeept.com/     \
-[GitHub]: https://github.com/adeept/Adeept_Robot_HAT-V3 
+[YouTube]: https://youtu.be/gM_1toe9tw8?si=lPIrJT_CW_v7MVGo
 
 
 ## Getting Support or Providing Advice
