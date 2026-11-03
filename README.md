@@ -8,7 +8,7 @@ The Adeept_Robot_HAT operates based on the Raspberry Pi. It has many interfaces.
 [Official website]:  https://www.adeept.com/     \
 [YouTube]: https://youtu.be/gM_1toe9tw8?si=lPIrJT_CW_v7MVGo    \
 [Product Link]: https://www.adeept.com/adeept-robot-hat-v30-for-raspberry-pi_p0429.html   \
-[Item Code]:ADM133
+[Item Code]: ADM133
 
 
 ## Getting Support or Providing Advice
