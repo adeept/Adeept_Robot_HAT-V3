@@ -1,12 +1,11 @@
-#!/usr/bin/env/python3
-# File name   : 02_Ultra.py
+#!/usr/bin/env/python
+# File name   : Ultrasonic.py
 # Website     : www.Adeept.com
 # Author      : Adeept
-# Date        : 2025/04/2
 from gpiozero import DistanceSensor
 from time import sleep
 
-Tr = 23 
+Tr = 23
 Ec = 24
 sensor = DistanceSensor(echo=Ec, trigger=Tr,max_distance=2) # Maximum detection distance 2m.
 

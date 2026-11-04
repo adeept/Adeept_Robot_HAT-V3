@@ -1,8 +1,7 @@
-#!/usr/bin/env/python3
-# File name   : 05_Motor.py
+#!/usr/bin/env python3
+# File name   : MotorCtrl.py
 # Website     : www.Adeept.com
 # Author      : Adeept
-# Date        : 2025/04/2
 import time
 from board import SCL, SDA
 import busio
@@ -26,13 +25,13 @@ pwm_motor = PCA9685(i2c, address=0x5f)
 pwm_motor.frequency = 50
 
 motor1 = motor.DCMotor(pwm_motor.channels[MOTOR_M1_IN1],pwm_motor.channels[MOTOR_M1_IN2] )
-motor1.decay_mode = (motor.SLOW_DECAY)
+motor1.decay_mode = motor.SLOW_DECAY
 motor2 = motor.DCMotor(pwm_motor.channels[MOTOR_M2_IN1],pwm_motor.channels[MOTOR_M2_IN2] )
-motor2.decay_mode = (motor.SLOW_DECAY)
+motor2.decay_mode = motor.SLOW_DECAY
 motor3 = motor.DCMotor(pwm_motor.channels[MOTOR_M3_IN1],pwm_motor.channels[MOTOR_M3_IN2] )
-motor3.decay_mode = (motor.SLOW_DECAY)
+motor3.decay_mode = motor.SLOW_DECAY
 motor4 = motor.DCMotor(pwm_motor.channels[MOTOR_M4_IN1],pwm_motor.channels[MOTOR_M4_IN2] )
-motor4.decay_mode = (motor.SLOW_DECAY)
+motor4.decay_mode = motor.SLOW_DECAY
 
 def Motor(channel,direction,motor_speed):
   if motor_speed > 100:
@@ -64,16 +63,23 @@ def destroy():
 
 
 if __name__ == '__main__':
-  try:     
-    for i in range(100):
-      speed_set = 50
-      Motor(1, 1, speed_set)
-      print("Forward")
-      time.sleep(2)
-      Motor(1, -1 ,speed_set)
-      print("Backward")
-      time.sleep(2)
+  try:
+    speed_set = 50
+    for i in range(10):
+        print("All motors forward")
+        Motor(1, 1, speed_set)
+        Motor(2, 1, speed_set)
+        Motor(3, 1, speed_set)
+        Motor(4, 1, speed_set)
+        time.sleep(2)
+
+        print("All motors backward")
+        Motor(1, -1, speed_set)
+        Motor(2, -1, speed_set)
+        Motor(3, -1, speed_set)
+        Motor(4, -1, speed_set)
+        time.sleep(2)
+
     destroy()
   except KeyboardInterrupt:
     destroy()
-

@@ -1,8 +1,7 @@
 #!/usr/bin/env/python
-# File name   : 09_Buzzer.py
+# File name   : HappyBirthday.py
 # Website     : www.Adeept.com
 # Author      : Adeept
-# Date        : 2025/04/2
 from gpiozero import TonalBuzzer
 from time import sleep
 

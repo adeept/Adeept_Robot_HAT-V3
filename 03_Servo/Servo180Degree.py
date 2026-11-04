@@ -1,8 +1,7 @@
-#!/usr/bin/env/python3
-# File name   : 01_Servo.py
+#!/usr/bin/env python3
+# File name   : Servo180Degree.py
 # Website     : www.Adeept.com
 # Author      : Adeept
-# Date        : 2025/04/2
 '''
 # SPDX-License-Identifier: MIT
 # Import the PCA9685 module. Available in the bundle and here:
@@ -19,7 +18,6 @@ from adafruit_pca9685 import PCA9685
 i2c = busio.I2C(SCL, SDA)
 # Create a simple PCA9685 class instance.
 pca = PCA9685(i2c, address=0x5f)  # default 0x40
-
 pca.frequency = 50
 
 
@@ -27,25 +25,27 @@ def set_angle(ID, angle):
     servo_angle = servo.Servo(pca.channels[ID], min_pulse=500, max_pulse=2400, actuation_range=180)
     servo_angle.angle = angle
 
+def test_all_servos():
+    for angle in range(0, 181, 10):
+        for ch in range(16):
+            set_angle(ch, angle)
+        time.sleep(0.01)
+    time.sleep(0.5)
+    for angle in range(180, -1, -10):
+        for ch in range(16):
+            set_angle(ch, angle)
+        time.sleep(0.01)
+    time.sleep(0.5)
 
-def test(channel):
-    for i in range(180):  # The servo turns from 0 to 180 degrees.
-        set_angle(channel, i)
-        time.sleep(0.01)
-    time.sleep(0.5)
-    for i in range(180):  # The servo turns from 180 to 0 degrees.
-        set_angle(channel, 180 - i)
-        time.sleep(0.01)
-    time.sleep(0.5)
 
 
 if __name__ == "__main__":
-    channel = 0
     try:
-        print(f"Servo on channel {channel} starts to rotate 180 degrees.")
+        print("All 16 servos start to rotate 0-180 back and forth synchronously.")
         while True:
-            test(channel)
+            test_all_servos()
     except KeyboardInterrupt:
-        print("Ctrl + C detected. Setting servo to 90 degrees.")
-        set_angle(channel, 90)
+        print("Ctrl + C detected. Setting all servos to 90 degrees.")
+        for ch in range(16):
+            set_angle(ch, 90)
         pca.deinit()  # Release PCA9685 resources
