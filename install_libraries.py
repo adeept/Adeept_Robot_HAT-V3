@@ -43,13 +43,6 @@ if __name__ == "__main__":
 
     # pip
     commands += [
-        "sudo pip3 install Adafruit-Blinka-Raspberry-Pi-PWM "
-        "adafruit-circuitpython-motor "
-        "adafruit-circuitpython-pca9685 "
-        "adafruit-circuitpython-busdevice "
-        "adafruit-circuitpython-ssd1306 "
-        "adafruit-circuitpython-ads7830 --break-system-packages",
-
         "sudo pip3 install pillow luma.oled mpu6050-raspberrypi spidev --break-system-packages",
         "sudo pip3 install flask_cors flask --break-system-packages",
         "sudo pip3 install numpy imutils pyzmq pybase64 psutil --break-system-packages",
