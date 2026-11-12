@@ -1,8 +1,8 @@
 #!/usr/bin/env/python
-# File name   : 06_LED.py
+# File name   : LED_HAT_V3.4.py
 # Website     : www.Adeept.com
 # Author      : Adeept
-# Date        : 2025/04/2
+# Description : Suitable for Adeept Robot HAT V3.4 and earlier versions
 
 import time
 from gpiozero import LED
