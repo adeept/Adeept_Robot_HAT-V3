@@ -4,39 +4,17 @@ The Adeept_Robot_HAT operates based on the Raspberry Pi. It has many interfaces.
 
 ## Resources Links
 
-- [Official Raspberry Pi website](https://www.raspberrypi.org/downloads/)
-- [Official website](https://www.adeept.com/)
-- [YouTube](https://youtu.be/gM_1toe9tw8?si=lPIrJT_CW_v7MVGo)
-- [Product Link](https://www.adeept.com/adeept-robot-hat-v30-for-raspberry-pi_p0429.html)
-- Item Code: ADM133
+[Official Raspberry Pi website]: https://www.raspberrypi.org/downloads/    \
+[Official website]:  https://www.adeept.com/     \
+[YouTube]: https://youtu.be/gM_1toe9tw8?si=lPIrJT_CW_v7MVGo    \
+[Product Link]: https://www.adeept.com/adeept-robot-hat-v30-for-raspberry-pi_p0429.html   \
+[Item Code]: ADM133
 
 
 ## Quick Start
 Run the following command to install all required dependencies first:
 ```bash
 sudo python3 install_libraries.py
-```
-
-Note: This script will automatically detect your Raspberry Pi model and install the corresponding libraries.  \
-If you need to use the speech recognition function:
-
-1. Enter the `Mode` folder
-
-```
-cd 16_Speech_Recognition/Mode
-```
-
-2. Run the model download script
-
-```
-sudo python3 download_mode.py
-```
-
-3. After the model download and extraction finish, go back to the project root directory and start the speech recognition program:
-
-```
-cd ..
-sudo python3 Speech_Recognition.py
 ```
 
 
